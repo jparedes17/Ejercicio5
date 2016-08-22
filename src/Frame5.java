@@ -1,4 +1,5 @@
 
+import java.math.BigDecimal;
 import javax.swing.JOptionPane;
 
 /*
@@ -144,8 +145,8 @@ public class Frame5 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       long sueldo, leypubl=1, segsoc=4,cajahor=5,segforz=(long) 0.5, sueldototal;
-        long op1,op2,op3,op4,optotal, cont1,cont2,cont3,cont4, cont5;
+       double sueldo, leypubl=1, segsoc=4,cajahor=5,segforz=0.5, sueldototal;
+        double op1,op2,op3,op4,optotal, cont1,cont2,cont3,cont4, cont5;
         String resultado, res1, res2, res3, res4, res5;
     
                 
@@ -156,7 +157,7 @@ public class Frame5 extends javax.swing.JFrame {
        }         
        else 
        {
-        sueldo= Long.parseLong(txtsueldo.getText());
+        sueldo= Double.parseDouble(txtsueldo.getText());
         op1= (sueldo*leypubl)/100;
         cont1= sueldo-op1;
         
@@ -173,7 +174,7 @@ public class Frame5 extends javax.swing.JFrame {
         res2= String.valueOf(op2);
         res3= String.valueOf(op3);        
         res4= String.valueOf(op4);
-        res5= String.valueOf(cont4);
+        res5= String.valueOf(new BigDecimal(cont4));
         txtLeyPublica.setText(res1);
         txtSeguroSocial.setText(res2);
         txtSeguroForz.setText(res3);
